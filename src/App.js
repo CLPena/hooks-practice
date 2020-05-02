@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Form from "./Form";
 
-function App() {
+const App = () => {
+  const [state, setState] = useState({
+    ideas: [
+      {
+        id: 1,
+        title: "Defeat the Tiger King",
+        description: "He deserves it",
+      },
+      {
+        id: 2,
+        title: "Find Carole's husband",
+        description: "WHERE IS HE?!",
+      },
+    ],
+  });
+
+  const submitIdea = (idea) => {
+    const allIdeas = [...state.ideas, idea];
+    setState({ ideas: allIdeas });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <Form submitIdea={submitIdea} />
       </header>
     </div>
   );
-}
+};
 
 export default App;
