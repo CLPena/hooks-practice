@@ -18,19 +18,19 @@ const Form = (props) => {
 
   return (
     <form>
-      <label>Title:</label>
+      <label>TITLE:</label>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       ></input>
-      <label>Description:</label>
+      <label>DESCRIPTION:</label>
       <input
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       ></input>
-      <button onClick={addNewIdea}>Submit Idea!</button>
+      <button className="submit" onClick={addNewIdea}>SUBMIT</button>
     </form>
   );
 };

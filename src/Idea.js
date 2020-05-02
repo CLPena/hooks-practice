@@ -5,7 +5,7 @@ const Idea = ({ title, description, id, deleteIdea }) => {
     <div className="idea-card" id={id}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <button id={id} onClick={() => deleteIdea(id)}>
+      <button className="delete" id={id} onClick={() => deleteIdea(id)}>
         DELETE
       </button>
     </div>

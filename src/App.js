@@ -16,6 +16,11 @@ const App = () => {
         title: "Find Carole's husband",
         description: "WHERE IS HE?!",
       },
+      {
+        id: 3,
+        title: "Set the Tigers Free",
+        description: "Make sure you're not covered in sardine oil first",
+      }
     ],
   });
 
@@ -30,7 +35,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <main>
       <header className="app-header">
         <h1>PENNY FOR YOUR THOUGHTS? </h1>
         <Form
@@ -42,7 +47,7 @@ const App = () => {
         ideas={state.ideas}
         deleteIdea={deleteIdea}
       />
-    </div>
+    </main>
   );
 };
 
