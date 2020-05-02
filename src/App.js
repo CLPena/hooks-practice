@@ -24,12 +24,24 @@ const App = () => {
     setState({ ideas: allIdeas });
   };
 
+  const deleteIdea = (id) => {
+    const filteredIdeas = state.ideas.filter((idea) => idea.id !== id);
+    setState({ ideas: filteredIdeas });
+  };
+
   return (
     <div className="app">
       <header className="app-header">
-        <Form submitIdea={submitIdea} />
+        <h1>PENNY FOR YOUR THOUGHTS? </h1>
+        <Form
+          submitIdea={submitIdea}
+        />
       </header>
-      <IdeasContainer ideas={state.ideas} />
+
+      <IdeasContainer
+        ideas={state.ideas}
+        deleteIdea={deleteIdea}
+      />
     </div>
   );
 };
