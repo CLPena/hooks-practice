@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Form from "./Form";
+import IdeasContainer from "./IdeasContainer";
 
 const App = () => {
   const [state, setState] = useState({
@@ -28,6 +29,7 @@ const App = () => {
       <header className="app-header">
         <Form submitIdea={submitIdea} />
       </header>
+      <IdeasContainer ideas={state.ideas} />
     </div>
   );
 };
